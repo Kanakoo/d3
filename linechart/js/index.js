@@ -27,5 +27,4 @@ g.append("g").call(axis_y)
     .text("Price($)")
     .attr({"transform":"rotate(-90)",
     "text-anchor":"end",
-    "dy":"1em"})
-    ;
+    "dy":"1em"});
