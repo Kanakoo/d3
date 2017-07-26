@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        svg{
+            width:1300px;
+            height:600px;
+            position: absolute;
+            border:2px solid brown;
+            background:hsl(18,70%,70%);
+        }
+    </style>
+</head>
+<body>
+<svg viewBox="0 0 1300 600"  preserveAspectRatio="xMinYMin meet">
+    <defs>
+        <linearGradient id="grad1" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse"><!--objectBoundingBox 0 0 1 1-->
+            <stop offset="0" stop-color="orange"/>
+            <stop offset="0.5" stop-color="brown"/>
+            <stop offset="1" stop-color="magenta"/>
+        </linearGradient>
+    </defs>
+    <defs>
+        <radialGradient id="grad2" cx="0.5" cy="0.5" r="0.5" fx="0.8" fy="0.8">
+            <stop offset="0" stop-color="brown"/>
+            <stop offset="0.7" stop-color="orange"/>
+            <stop offset="1" stop-color="beige"/>
+        </radialGradient>
+    </defs>
+    <defs>
+        <pattern id="p1" x="0" y="0" width="0.2" height="0.2">
+            <!--patternUnits="objectBoundingBox" patternContentUnits="objectBoundingBox"默认为百分比 userSpaceOnUse为坐标绝对值-->
+            <circle r="5" cx="10" cy="10" fill="red"></circle>
+            <polygon points="30 10 60 50 0 50" fill="green"></polygon>
+        </pattern>
+    </defs>
+    <g>
+    <circle cx="100" cy="100" r="90" stroke="brown" stroke-width="2" fill="url(#grad1)"></circle>
+    <circle cx="70" cy="80" r="20" fill="white"></circle>
+    <circle cx="130" cy="80" r="20" fill="white"></circle>
+    <circle cx="75" cy="80" r="10" fill="black"></circle>
+    <circle cx="135" cy="80" r="10" fill="black"></circle>
+    <path d="M 50 140 A 60 60 0 0 0 150 140"
+          stroke="white" stroke-width="3" fill="none"></path>
+    </g>
+    <g>
+        <path d="M 360 160 A 400 300 20 0 1 600 500" stroke="black" stroke-width="3" fill="none"></path>
+        <circle cx="300" cy="100" r="90" fill="url(#grad2)"></circle>
+        <path d="M 600 500 Q 600 300 700 120" stroke="black" stroke-width="3" fill="none"></path>
+        <path d="M 600 500 C 700 200 800 300 900 300" stroke="black" stroke-width="3" fill="none"></path>
+        <!--光滑贝塞尔曲线Q-T C-S-->
+    </g>
+    <rect x="900" y="410" width="400" height="180" fill="url(#p1)"></rect>
+
+</svg>
+
+</body>
+</html>

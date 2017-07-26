@@ -16,8 +16,7 @@ var line_generator=d3.svg.line()
     .interpolate("cardinal")
 
 var svg=d3.select("#container").append("svg:svg").attr({"width":width,"height":height});
-svg.append("g").attr({"transform":"translate("+margin.left+","+margin.top+")"});
-var g=d3.select("g");
+var g=svg.append("g").attr({"transform":"translate("+margin.left+","+margin.top+")"});
 g.append("path").attr("d",line_generator(data));
 var axis_x=d3.svg.axis().scale(scale_x),
     axis_y=d3.svg.axis().scale(scale_y).orient("left");
