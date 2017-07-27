@@ -28,6 +28,11 @@
             <stop offset="0.7" stop-color="orange"/>
             <stop offset="1" stop-color="beige"/>
         </radialGradient>
+        <radialGradient id="grad3" cx="0.5" cy="0.5" r="0.5" fx="0.2" fy="0.5">
+            <stop offset="0" stop-color="brown"/>
+            <stop offset="0.7" stop-color="orange"/>
+            <stop offset="1" stop-color="beige"/>
+        </radialGradient>
     </defs>
     <defs>
         <pattern id="p1" x="0" y="0" width="0.2" height="0.2">
@@ -36,24 +41,54 @@
             <polygon points="30 10 60 50 0 50" fill="green"></polygon>
         </pattern>
     </defs>
-    <g>
-    <circle cx="100" cy="100" r="90" stroke="brown" stroke-width="2" fill="url(#grad1)"></circle>
-    <circle cx="70" cy="80" r="20" fill="white"></circle>
-    <circle cx="130" cy="80" r="20" fill="white"></circle>
-    <circle cx="75" cy="80" r="10" fill="black"></circle>
-    <circle cx="135" cy="80" r="10" fill="black"></circle>
-    <path d="M 50 140 A 60 60 0 0 0 150 140"
-          stroke="white" stroke-width="3" fill="none"></path>
-    </g>
-    <g>
+
+    <g id="tree">
         <path d="M 360 160 A 400 300 20 0 1 600 500" stroke="black" stroke-width="3" fill="none"></path>
-        <circle cx="300" cy="100" r="90" fill="url(#grad2)"></circle>
         <path d="M 600 500 Q 600 300 700 120" stroke="black" stroke-width="3" fill="none"></path>
         <path d="M 600 500 C 700 200 800 300 900 300" stroke="black" stroke-width="3" fill="none"></path>
+        <circle cx="300" cy="100" r="90" fill="url(#grad2)">
+            <animateTransform
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 360 160"
+                    to="360 360 160"
+                    dur="3s"
+                    begin="3s"
+                    repeatCount="indefinite"
+            ></animateTransform>
+        </circle>
         <!--光滑贝塞尔曲线Q-T C-S-->
     </g>
-    <rect x="900" y="410" width="400" height="180" fill="url(#p1)"></rect>
 
+    <g id="smile_face" transform="translate(600,10)">
+        <circle cx="100" cy="100" r="90" stroke="brown" stroke-width="2" fill="url(#grad1)"></circle>
+        <circle cx="70" cy="80" r="20" fill="white"></circle>
+        <circle cx="130" cy="80" r="20" fill="white"></circle>
+        <circle cx="75" cy="80" r="10" fill="black"></circle>
+        <circle cx="135" cy="80" r="10" fill="black"></circle>
+        <path d="M 50 140 A 60 60 0 0 0 150 140"
+              stroke="white" stroke-width="3" fill="none"></path>
+    </g>
+
+    <rect x="900" y="410" width="400" height="180" fill="url(#p1)"></rect>
+    <circle cx="700" cy="110" r="100" stroke="beige" stroke-width="2" fill="url(#grad3)">
+        <animateTransform
+                attributeType="XML"
+                attributeName="transform"
+                type="translate"
+                from="0 0"
+                to="300 180"
+                dur="3s"
+                fill="freeze"
+        ></animateTransform>
+
+        <!--repeatCount="indefinite"-->
+    </circle>
+    <ellipse  cx="0" cy="0" rx="30" ry="20" fill="beige">
+        <animateMotion path="M600,500 q100,120 120,20 q140,-50 160,0" rotate="auto" begin="0s" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <text x="600" y="500" dx="10 20 30 40 50" dy="0">HELLO SVG</text>
 </svg>
 
 </body>

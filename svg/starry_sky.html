@@ -43,18 +43,22 @@
                 <stop offset="0" stop-color="rgba(255,255,255,0.8)"/>
                 <stop offset="1" stop-color="rgba(255,255,255,0)"/>
             </radialGradient>
+            <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="rgba(255,255,255,0.2)"></stop>
+                <stop offset="1" stop-color="rgba(255,255,255,0)"></stop>
+            </linearGradient>
             <clipPath id="light-clip">
                 <polygon points="600 280 0 300 0 260" fill="rgba(255,255,255,0.6)">
-                    <!--<animateTransform
+                    <animateTransform
                             attributeName="transform"
                             attributeType="XML"
                             type="rotate"
-                            from="0"
-                            to="360"
+                            from="0 600 280"
+                            to="360 600 280"
                             dur="10s"
                             repeatCount="indefinite"
                     >
-                    </animateTransform>-->
+                    </animateTransform>
                 </polygon>
 
             </clipPath>
@@ -63,10 +67,10 @@
         <ellipse cx="600" cy="280" rx="500" ry="200" fill="url(#light)" clip-path="url(#light-clip)"></ellipse>
     </g>
     </g>
-
-    <g id="reflect">
+<rect x="0" y="350" width="1200" height="300" fill="url(#fade)"></rect>
+    <!--<g id="reflect">
         <use xlink:href="#real" transform="scale(1,-1)"></use>
-    </g>
+    </g>-->
 </svg>
 <script>
     var svg=document.querySelector("svg");
